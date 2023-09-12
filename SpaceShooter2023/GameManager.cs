@@ -1,42 +1,67 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Controls;
 using System.Windows.Threading;
 
 namespace SpaceShooter2023
 {
     public static class GameManager
     {
-        private static int _gameSpeed { get; set; }
-        private static DispatcherTimer _timer { get; set; }
+        static DispatcherTimer _timer;
+
+        // Objects
+        static Player _testShip;
+        static Asteroid _testAsteroid;
+        static PewPew _testPewPew;
+        static PowerUp _testPowerUp;
+
         public static void Initialize()
         {
-            // Game Speed
             _timer = new DispatcherTimer();
-            _gameSpeed = Global.StartSpeed;
-            SpeedManager(0);
             _timer.Tick += OnTick;
-
-
-
-
+            _timer.Interval = new TimeSpan(0, 0, 0, 0, 20);
             _timer.Start();
+
+            // _testShip
+            _testShip = new Player();
+            _testShip.Design();
+
+            // _testAsteroid
+            _testAsteroid = new Asteroid();
+            _testAsteroid.Design();
+
+            // _testPewPew
+            _testPewPew = new PewPew();
+            _testPewPew.Design();
+
+            // _testPowerUp
+            _testPowerUp = new PowerUp();
+            _testPowerUp.Design();
         }
 
         private static void OnTick(object sender, EventArgs e)
         {
-            Global.TextBlockScore.Text = "Score: " + Global.Score++;
-        }
+            // _testShip
+            _testShip.RemoveFromCanvas();
+            _testShip.SetMovingDirection();
+            _testShip.Move();
+            _testShip.Show();
 
-        private static void SpeedManager(int pDeltaSpeed)
-        {
-            if (_gameSpeed + pDeltaSpeed <= 1)
-                _gameSpeed = 1;
-            _gameSpeed = _gameSpeed + pDeltaSpeed;
+            // _testAsteroid
+            _testAsteroid.RemoveFromCanvas();
+            _testAsteroid.SetMovingDirection();
+            //_testAsteroid.Move();
+            _testAsteroid.Show();
 
-            _timer.Interval = new TimeSpan(0, 0, 0, 0, _gameSpeed);
+            // _testPewPew
+            _testPewPew.RemoveFromCanvas();
+            _testPewPew.SetMovingDirection();
+            //_testPewPew.Move();
+            _testPewPew.Show();
+
+            // _testPowerUp
+            _testPowerUp.RemoveFromCanvas();
+            _testPowerUp.SetMovingDirection();
+            //_testPowerUp.Move();
+            _testPowerUp.Show();
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SpaceShooter2023"
         mc:Ignorable="d"
-        Title="SpaceShooter2023 by arbnor.me" Height="500" Width="800" ResizeMode="NoResize" PreviewKeyDown="KeyIsDown">
+        Title="SpaceShooter2023 by arbnor.me" Height="500" Width="800" ResizeMode="NoResize" PreviewKeyDown="Window_PreviewKeyDown_1" >
     <Grid Background="DarkBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width ="*"/>
@@ -19,8 +19,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Canvas x:Name="Canvas" Grid.Column="1" Grid.Row="2" Background="Black">
-            <TextBlock x:Name="LoseScreen" TextWrapping="Wrap" Text="Game over press Enter to start" TextAlignment="Center" FontSize="100" Foreground="White" HorizontalAlignment="Left" Height="400" VerticalAlignment="Center" Width="700" />
         </Canvas>
-        <TextBlock x:Name="TextBlockScore" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Left" Text="Score: " VerticalAlignment="Center" Height="50" Width="700" Grid.Row="1" FontSize="35"/>
     </Grid>
 </Window>

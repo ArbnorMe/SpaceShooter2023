@@ -24,26 +24,20 @@ namespace SpaceShooter2023
         {
             InitializeComponent();
         }
-        bool _firstTime = true;
+        bool AlreadyStarted = false;
 
-        private void KeyIsDown(object sender, KeyEventArgs e)
+
+
+        private void Window_PreviewKeyDown_1(object sender, KeyEventArgs e)
         {
-            if (_firstTime)
+            if (!AlreadyStarted)
             {
-                //Global.GamingArea = Canvas;
-                Console.WriteLine("Test!");
-                Global.TextBlockScore = TextBlockScore;
-
-                _firstTime = false;
-            }
-
-
-
-            if (e.Key == Key.Enter)
-            {
-                LoseScreen.Visibility = Visibility.Collapsed;
+                Global.SpaceCanvas = Canvas;
                 GameManager.Initialize();
+                AlreadyStarted = true;
             }
+            Global.LastButton = e.Key;
+
         }
     }
 }
