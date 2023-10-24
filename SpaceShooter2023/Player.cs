@@ -14,6 +14,7 @@ namespace SpaceShooter2023
     {
         public void SetMovingDirection()
         {
+            //CornerCheck();
             switch (Global.LastButton)
             {
                 case Key.Left:
@@ -32,6 +33,32 @@ namespace SpaceShooter2023
                     X_Vector = 0;
                     Y_Vector = -10;
                     break;
+            }
+        }
+        public Player()
+        {
+            Alive = true;
+        }
+        public void CornerCheck()
+        {
+            if (X_Position <= 0)
+            {
+                X_Position = 5;
+            }
+
+            if (Y_Position <= 0)
+            {
+                Y_Position = 5;
+            }
+
+            if (X_Position >= Global.WindowWidth - 50)
+            {
+                X_Position = Convert.ToInt32(Global.WindowWidth) - 55;
+            }
+
+            if (Y_Position >= Global.WindowHeight - 20)
+            {
+                Y_Position = Convert.ToInt32(Global.WindowHeight) - 25;
             }
         }
         public void Design()

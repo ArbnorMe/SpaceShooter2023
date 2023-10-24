@@ -3,12 +3,12 @@
   <Class Name="SpaceShooter2023.SpaceObject">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAgBAAIAAAAgAAAEAAAACAAAEAAAAAAAAAAAAACA=</HashCode>
+      <HashCode>AAAEAAAAAIAAAAgAAAEAAAACAAAEAAQAAAAAAAAAACA=</HashCode>
       <FileName>SpaceObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpaceShooter2023.Ship">
-    <Position X="1" Y="4.75" Width="1.5" />
+    <Position X="1" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Ship.cs</FileName>
@@ -17,33 +17,33 @@
   <Class Name="SpaceShooter2023.PewPew">
     <Position X="3.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAABAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PewPew.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpaceShooter2023.Asteroid">
     <Position X="6.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAABAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Asteroid.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpaceShooter2023.PowerUp">
     <Position X="9" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAABAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PowerUp.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpaceShooter2023.Player">
-    <Position X="2.5" Y="6.25" Width="1.5" />
+    <Position X="2.5" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAABAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpaceShooter2023.Enemy">
-    <Position X="0.5" Y="6.25" Width="1.5" />
+    <Position X="0.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemy.cs</FileName>
@@ -59,7 +59,7 @@
   <Class Name="SpaceShooter2023.GameManager">
     <Position X="11.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAAAgAQAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>CAAAAAQAgAAkAQAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameManager.cs</FileName>
     </TypeIdentifier>
   </Class>

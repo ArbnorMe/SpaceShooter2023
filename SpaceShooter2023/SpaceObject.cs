@@ -10,7 +10,7 @@ using System.Windows.Shapes;
 
 namespace SpaceShooter2023
 {
-    public class SpaceObject
+    public abstract class SpaceObject
     {
         // FELDER
         public Polygon Shape = new Polygon();
@@ -20,15 +20,22 @@ namespace SpaceShooter2023
         public int Y_Position { get; set; }
         public int X_Vector { get; set; }
         public int Y_Vector { get; set; }
+        public bool Alive {  get; set; }
+        
 
         // METHODEN
         public void Show()
         {
-            Canvas.SetLeft(Shape, X_Position);
-            Canvas.SetTop(Shape, Y_Position);
+            if (Alive)
+            {
+                Canvas.SetLeft(Shape, X_Position);
+                Canvas.SetTop(Shape, Y_Position);
 
-            Global.SpaceCanvas.Children.Add(Shape);
+                Global.SpaceCanvas.Children.Add(Shape);
+            }
+
         }
+
         public void RemoveFromCanvas()
         {
             Global.SpaceCanvas.Children.Remove(Shape);
