@@ -54,7 +54,7 @@ namespace SpaceShooter2023
             // _testPewPew
             _testPewPew.RemoveFromCanvas();
             _testPewPew.SetMovingDirection();
-            //_testPewPew.Move();
+            _testPewPew.Move();
             _testPewPew.Show();
 
             // _testPowerUp

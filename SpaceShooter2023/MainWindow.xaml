@@ -7,18 +7,7 @@
         mc:Ignorable="d"
         Title="SpaceShooter2023 by arbnor.me" Height="500" Width="800" ResizeMode="NoResize" PreviewKeyDown="Window_PreviewKeyDown_1" >
     <Grid Background="DarkBlue">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width ="*"/>
-            <ColumnDefinition Width ="700"/>
-            <ColumnDefinition Width ="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="400"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Canvas x:Name="Canvas" Grid.Column="1" Grid.Row="2" Background="Black">
+        <Canvas x:Name="Canvas" Background="Black">
         </Canvas>
     </Grid>
 </Window>
