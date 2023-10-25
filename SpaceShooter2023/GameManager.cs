@@ -44,24 +44,6 @@ namespace SpaceShooter2023
             _testShip.SetMovingDirection();
             _testShip.Move();
             _testShip.Show();
-
-            // _testAsteroid
-            _testAsteroid.RemoveFromCanvas();
-            _testAsteroid.SetMovingDirection();
-            //_testAsteroid.Move();
-            _testAsteroid.Show();
-
-            // _testPewPew
-            _testPewPew.RemoveFromCanvas();
-            _testPewPew.SetMovingDirection();
-            _testPewPew.Move();
-            _testPewPew.Show();
-
-            // _testPowerUp
-            _testPowerUp.RemoveFromCanvas();
-            _testPowerUp.SetMovingDirection();
-            //_testPowerUp.Move();
-            _testPowerUp.Show();
         }
     }
 }
