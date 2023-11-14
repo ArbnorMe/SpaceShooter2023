@@ -30,5 +30,8 @@ namespace SpaceShooter2023
             Shape.Stroke = Brushes.DarkRed;
             Shape.StrokeThickness = 1;
         }
+        public void Shooting ()
+        {
+        }
     }
 }

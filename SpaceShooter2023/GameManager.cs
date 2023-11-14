@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Threading;
 
 namespace SpaceShooter2023
@@ -8,7 +9,7 @@ namespace SpaceShooter2023
         static DispatcherTimer _timer;
 
         // Objects
-        static Player _testShip;
+        static Player player;
         static Asteroid _testAsteroid;
         static PewPew _testPewPew;
         static PowerUp _testPowerUp;
@@ -20,9 +21,10 @@ namespace SpaceShooter2023
             _timer.Interval = new TimeSpan(0, 0, 0, 0, 20);
             _timer.Start();
 
-            // _testShip
-            _testShip = new Player();
-            _testShip.Design();
+            // player
+            player = new Player();
+            player.Design();
+            player.Y_Position = (int)Application.Current.MainWindow.ActualHeight / 2 - player.height; // Der Spieler wird mittisch vom Fenster platziert
 
             // _testAsteroid
             _testAsteroid = new Asteroid();
@@ -39,11 +41,29 @@ namespace SpaceShooter2023
 
         private static void OnTick(object sender, EventArgs e)
         {
-            // _testShip
-            _testShip.RemoveFromCanvas();
-            _testShip.SetMovingDirection();
-            _testShip.Move();
-            _testShip.Show();
+            // player
+            player.RemoveFromCanvas();
+            player.SetMovingDirection();
+            player.Move();
+            player.Show();
+
+            // _testAsteroid
+            _testAsteroid.RemoveFromCanvas();
+            _testAsteroid.SetMovingDirection();
+            _testAsteroid.Move();
+            _testAsteroid.Show();
+
+            // _testPewPew
+            _testPewPew.RemoveFromCanvas();
+            _testPewPew.SetMovingDirection();
+            _testPewPew.Move();
+            _testPewPew.Show();
+
+            // _testPowerUp
+            _testPowerUp.RemoveFromCanvas();
+            _testPowerUp.SetMovingDirection();
+            _testPowerUp.Move();
+            _testPowerUp.Show();
         }
     }
 }

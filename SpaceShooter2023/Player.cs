@@ -12,9 +12,9 @@ namespace SpaceShooter2023
 {
     public class Player : Ship
     {
+        public int height = 20;
         public void SetMovingDirection()
         {
-            //CornerCheck();
             switch (Global.LastButton)
             {
                 case Key.Left:
@@ -32,6 +32,9 @@ namespace SpaceShooter2023
                 case Key.Up:
                     X_Vector = 0;
                     Y_Vector = -10;
+                    break;
+                case Key.Space:
+                                        
                     break;
             }
         }

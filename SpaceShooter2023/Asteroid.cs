@@ -11,8 +11,8 @@ namespace SpaceShooter2023
     {
         public void SetMovingDirection()
         {
-            X_Position = 80;
-            Y_Position = 80;
+            X_Position = 20;
+            Y_Position = 20;
         }
         public void Design()
         {

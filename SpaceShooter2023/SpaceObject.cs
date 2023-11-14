@@ -26,13 +26,10 @@ namespace SpaceShooter2023
         // METHODEN
         public void Show()
         {
-            if (Alive)
-            {
-                Canvas.SetLeft(Shape, X_Position);
-                Canvas.SetTop(Shape, Y_Position);
+            Canvas.SetLeft(Shape, X_Position);
+            Canvas.SetTop(Shape, Y_Position);
 
-                Global.SpaceCanvas.Children.Add(Shape);
-            }
+            Global.SpaceCanvas.Children.Add(Shape);
 
         }
 
@@ -40,11 +37,30 @@ namespace SpaceShooter2023
         {
             Global.SpaceCanvas.Children.Remove(Shape);
         }
-        
+
         public void Move()
         {
             X_Position = X_Position + X_Vector;
             Y_Position = Y_Position + Y_Vector;
+
+            // Check if the object is going out of bounds
+            if (X_Position < 0)
+            {
+                X_Position = 0;
+            }
+            else if (X_Position > Global.SpaceCanvas.ActualWidth - Shape.ActualWidth)
+            {
+                X_Position = (int)(Global.SpaceCanvas.ActualWidth - Shape.ActualWidth);
+            }
+
+            if (Y_Position < 0)
+            {
+                Y_Position = 0;
+            }
+            else if (Y_Position > Global.SpaceCanvas.ActualHeight - Shape.ActualHeight)
+            {
+                Y_Position = (int)(Global.SpaceCanvas.ActualHeight - Shape.ActualHeight);
+            }
         }
     }
 }
