@@ -9,6 +9,15 @@ namespace SpaceShooter2023
 {
     public class Asteroid : SpaceObject
     {
+        public Asteroid()
+        {
+            Alive = true;
+            Random rnd = new Random();
+            X_Position = 800;
+            Y_Position = rnd.Next(0, 400);
+            X_Vector = -4;
+
+        }
         public void SetMovingDirection()
         {
             X_Position = 20;

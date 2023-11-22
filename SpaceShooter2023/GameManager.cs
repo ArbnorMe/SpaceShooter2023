@@ -11,7 +11,6 @@ namespace SpaceShooter2023
         // Objects
         static Player player;
         static Asteroid _testAsteroid;
-        static PewPew _testPewPew;
         static PowerUp _testPowerUp;
 
         public static void Initialize()
@@ -26,13 +25,12 @@ namespace SpaceShooter2023
             player.Design();
             player.Y_Position = (int)Application.Current.MainWindow.ActualHeight / 2 - player.height; // Der Spieler wird mittisch vom Fenster platziert
 
-            // _testAsteroid
-            _testAsteroid = new Asteroid();
-            _testAsteroid.Design();
-
-            // _testPewPew
-            _testPewPew = new PewPew();
-            _testPewPew.Design();
+            // Asteroide
+            for (int i = 0; i < Global.NumberOfAsteroids; i++)
+            {
+                Global.ListWithAsteroids.Add(new Asteroid());
+                Global.ListWithAsteroids[i].Design();
+            }
 
             // _testPowerUp
             _testPowerUp = new PowerUp();
@@ -44,20 +42,17 @@ namespace SpaceShooter2023
             // player
             player.RemoveFromCanvas();
             player.SetMovingDirection();
+            player.LetThePewPewFly();
             player.Move();
             player.Show();
 
-            // _testAsteroid
-            _testAsteroid.RemoveFromCanvas();
-            _testAsteroid.SetMovingDirection();
-            _testAsteroid.Move();
-            _testAsteroid.Show();
-
-            // _testPewPew
-            _testPewPew.RemoveFromCanvas();
-            _testPewPew.SetMovingDirection();
-            _testPewPew.Move();
-            _testPewPew.Show();
+            // Asteroide
+            foreach (var item in Global.ListWithAsteroids)
+            {
+                item.RemoveFromCanvas();
+                item.Move();
+                item.Show();
+            }
 
             // _testPowerUp
             _testPowerUp.RemoveFromCanvas();

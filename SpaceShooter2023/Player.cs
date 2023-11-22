@@ -13,34 +13,38 @@ namespace SpaceShooter2023
     public class Player : Ship
     {
         public int height = 20;
+        public Player()
+        {
+            Alive = true;
+        }
         public void SetMovingDirection()
         {
             switch (Global.LastButton)
             {
                 case Key.Left:
-                    X_Vector = -10;
+                    X_Vector = -Global.GameSpeed;
                     Y_Vector = 0;
                     break;
                 case Key.Right:
-                    X_Vector = 10;
+                    X_Vector = Global.GameSpeed;
                     Y_Vector = 0;
                     break;
                 case Key.Down:
                     X_Vector = 0;
-                    Y_Vector = +10;
+                    Y_Vector = +Global.GameSpeed;
                     break;
                 case Key.Up:
                     X_Vector = 0;
-                    Y_Vector = -10;
+                    Y_Vector = -Global.GameSpeed;
                     break;
                 case Key.Space:
-                                        
+                    _shots.Add(new PewPew());
+                    _shots[_shots.Count - 1].Design();
+                    _shots[_shots.Count - 1].SetStartPosition(X_Position + 15, Y_Position + 15);
+                    Global.LastButton = Key.Back;
+                    
                     break;
             }
-        }
-        public Player()
-        {
-            Alive = true;
         }
         public void CornerCheck()
         {

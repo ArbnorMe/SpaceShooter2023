@@ -8,10 +8,9 @@ namespace SpaceShooter2023
 {
     public class PewPew : SpaceObject
     {
-        public void SetMovingDirection()
+        public PewPew()
         {
-            X_Position = 150;
-            Y_Position = 150;
+            Alive = true;
         }
         public void Design()
         {
@@ -30,8 +29,17 @@ namespace SpaceShooter2023
             Shape.Stroke = Brushes.DarkRed;
             Shape.StrokeThickness = 1;
         }
-        public void Shooting ()
+        public void SetStartPosition(int EingabeX, int EingabeY)
         {
+            X_Position = EingabeX;
+            Y_Position = EingabeY;
+            X_Vector = Global.GameSpeed + 2;
+        }
+        public bool OutOfRange()
+        {
+            if (X_Position >= Global.WindowWidth)
+                return true;
+            return false;
         }
     }
 }
