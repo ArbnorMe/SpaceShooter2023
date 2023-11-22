@@ -16,10 +16,10 @@ namespace SpaceShooter2023
         {
             // Define the vertices for the PewPewLaser Shape-Point
             PointCollection myPointCollection = new PointCollection();
-            myPointCollection.Add(new Point(-8, 0));
+            myPointCollection.Add(new Point(-10, 0));
             myPointCollection.Add(new Point(-4, -4));
             myPointCollection.Add(new Point(4, -4));
-            myPointCollection.Add(new Point(8, 0));
+            myPointCollection.Add(new Point(10, 0));
             myPointCollection.Add(new Point(4, 4));
             myPointCollection.Add(new Point(-4, 4));
             Shape.Points = myPointCollection;

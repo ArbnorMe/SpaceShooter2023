@@ -47,11 +47,21 @@ namespace SpaceShooter2023
             player.Show();
 
             // Asteroide
-            foreach (var item in Global.ListWithAsteroids)
+            for (int i = Global.ListWithAsteroids.Count - 1; i >= 0; i--)
             {
-                item.RemoveFromCanvas();
-                item.Move();
-                item.Show();
+                var asteroid = Global.ListWithAsteroids[i];
+                asteroid.RemoveFromCanvas();
+                if (asteroid.OutOfGame())
+                {
+                    Global.ListWithAsteroids.RemoveAt(i);
+                    var newAsteroid = new Asteroid();
+                    newAsteroid.Design();
+                    Global.ListWithAsteroids.Insert(i, newAsteroid);
+                    continue;
+                }
+
+                asteroid.Move();
+                asteroid.Show();
             }
 
             // _testPowerUp
