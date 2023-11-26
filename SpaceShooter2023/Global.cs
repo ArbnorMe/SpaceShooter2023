@@ -20,6 +20,9 @@ namespace SpaceShooter2023
         public static List<Asteroid> ListWithAsteroids = new List<Asteroid>();
         public static int NumberOfAsteroids = 4;
 
+        // PewPew
+        public static List<PewPew> ListWithPewPews = new List<PewPew>();
+
         public static double WindowWidth = Application.Current.MainWindow.ActualWidth;
         public static double WindowHeight = Application.Current.MainWindow.ActualHeight;
     }

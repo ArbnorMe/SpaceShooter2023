@@ -38,11 +38,10 @@ namespace SpaceShooter2023
                     Y_Vector = -Global.GameSpeed;
                     break;
                 case Key.Space:
-                    _shots.Add(new PewPew());
-                    _shots[_shots.Count - 1].Design();
-                    _shots[_shots.Count - 1].SetStartPosition(X_Position + 15, Y_Position + 15);
+                    Global.ListWithPewPews.Add(new PewPew());
+                    Global.ListWithPewPews[Global.ListWithPewPews.Count - 1].Design();
+                    Global.ListWithPewPews[Global.ListWithPewPews.Count - 1].SetStartPosition(X_Position + 15, Y_Position + 15);
                     Global.LastButton = Key.Back;
-                    
                     break;
             }
         }

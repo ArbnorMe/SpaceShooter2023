@@ -9,25 +9,37 @@ namespace SpaceShooter2023
 {
     public class Ship : SpaceObject
     {
-        internal List<PewPew> _shots = new List<PewPew>();
+        private int tempAsteroid = 0;
+
+        //public List<PewPew> _shots = new List<PewPew>();
         internal List<PewPew> _shotsToRemove = new List<PewPew>();
 
         public void LetThePewPewFly()
         {
-            foreach (PewPew x in _shots)
+            foreach (PewPew x in Global.ListWithPewPews)
             {
                 if (x.OutOfRange())
+                {
                     _shotsToRemove.Add(x);
-                x.RemoveFromCanvas();
+                    x.RemoveFromCanvas();
+                    tempAsteroid = Global.NumberOfAsteroids - Global.ListWithAsteroids.Count;
+                    for (int i = 0; i < tempAsteroid; i++)
+                    {
+                        Global.ListWithAsteroids.Add(new Asteroid());
+                        Global.ListWithAsteroids[i].Design();
+
+                    }
+                }
             }
             foreach (PewPew x in _shotsToRemove)
-                _shots.Remove(x);
-            foreach (PewPew x in _shots)
+                Global.ListWithPewPews.Remove(x);
+            foreach (PewPew x in Global.ListWithPewPews)
             {
                 x.RemoveFromCanvas();
                 x.Move();
                 x.Show();
             }
+            
         }
     }
 }

@@ -37,6 +37,11 @@ namespace SpaceShooter2023
             _testPowerUp.Design();
         }
 
+        public static void GameOver()
+        {
+            _timer.Stop();
+            MessageBox.Show("Game Over");
+        }
         private static void OnTick(object sender, EventArgs e)
         {
             // player
@@ -60,6 +65,7 @@ namespace SpaceShooter2023
                     continue;
                 }
 
+                asteroid.PewPewCol();
                 asteroid.Move();
                 asteroid.Show();
             }
