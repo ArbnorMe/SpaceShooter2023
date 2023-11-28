@@ -73,6 +73,7 @@ namespace SpaceShooter2023
             // _testPowerUp
             _testPowerUp.RemoveFromCanvas();
             _testPowerUp.SetMovingDirection();
+            _testPowerUp.OutOfLevel();
             _testPowerUp.Move();
             _testPowerUp.Show();
         }

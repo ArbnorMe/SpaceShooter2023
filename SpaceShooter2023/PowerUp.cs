@@ -11,10 +11,18 @@ namespace SpaceShooter2023
 {
     public class PowerUp : SpaceObject
     {
+        public PowerUp()
+        {
+            Alive = true;
+
+            X_Position = 100;
+            Y_Position = 10;
+        }
+
         public void SetMovingDirection()
         {
-            X_Position = 280;
-            Y_Position = 280;
+            X_Vector = -10;
+            Y_Vector = 0;
         }
         public void Design()
         {
@@ -37,6 +45,14 @@ namespace SpaceShooter2023
             myPointCollection.Add(new Point(-10, -10));
 
             Shape.Points = myPointCollection;
+        }
+
+        public void OutOfLevel()
+        {
+            if (X_Position < 10)
+            { 
+                X_Position = 500;
+            }
         }
     }
 }
